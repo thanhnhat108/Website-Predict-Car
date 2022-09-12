@@ -1,0 +1,155 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+html{
+    font-size: 62.5%;
+    line-height: 1.4rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.app{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.background{
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    transition: all 2s ease;
+    animation: fade 1s ease ;
+}
+
+@keyframes fade {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.wrapper{
+    position: absolute;
+    display: flex;
+    flex-direction: column;  
+    justify-content: center;
+    align-items: center;
+    width: 50rem;
+    min-height: 10rem;
+    padding: 3.2rem 2.4rem;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    align-self: center;
+    box-shadow: 0 2px 5px 0 rgba(51, 62, 73, 0.1);
+    
+}
+
+.wrapper .heading {
+    font-size: 3.5rem;
+    margin-bottom: 3rem;
+    letter-spacing: 0.5rem;
+}
+
+.form-group {
+    display: flex;
+    margin-bottom: 16px;
+    flex-direction: column;
+    width: 30rem;
+}
+
+label{
+    display: flex;
+    font-size: 1.6rem;
+    text-align: center;
+    align-items: center;
+    font-weight: 600;
+    margin: 1rem 0;
+}
+
+.form-group p{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.form-group label,
+.form-group p{
+    text-align: left;
+}
+
+.form-control {
+    height: 4rem;
+    border: 1px solid #b3b3b3;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    font-size: 1.4rem;
+    padding: 12px 12px;
+}
+
+
+
+.btn-submit{
+    outline: none;
+    background-color: #1dbfaf;
+    margin-top: 1.2rem;
+    padding: 1.2rem 1.6rem;
+    font-weight: 600;
+    color: #fff;
+    border: none;
+    width: 100%;
+    font-size: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-submit:hover{
+    opacity: 0.85;
+}
+
+.seperate{
+    height: 0.2rem;
+    width: 100%;
+    background-color: rgb(20, 204, 218);
+    margin: 2rem 0;
+}
+
+
+.result{
+    font-size: 3.5rem;
+    color: red;
+}
+
+
+/* Responsive */
+@media (max-width: 739px) {
+    .background{
+        background-size: 100% 100%;
+    }
+    .form-group{
+        width: 100%;
+    }
+
+    .wrapper{
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .form-control{
+        height: 2.8rem;
+    }
+
+    .result{
+    bottom: 9.7rem;
+
+    }
+}

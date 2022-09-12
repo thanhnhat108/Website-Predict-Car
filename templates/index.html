@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Predict Brand Car</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+    <div class="app">
+        <div class="background" style="background-image: url('../static/img/car1.jpg') ;"></div>
+        <div class="wrapper">
+            <form action="{{ url_for('predict')}}" method="post" class="form">
+                <h2 class="heading">Predict car</h2>
+                <div class="form-group">
+                    <label for="">Price (in £)</label>
+                    <input placeholder="Example: 1490" type="text" class="form-control" name="price" required="required">
+                </div>
+                <div class="form-group">
+                    <label for="">Mileage (distance used)</label>
+                    <input placeholder="Example: 15735" type="text" class="form-control" name="mileage" required="required">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Mpg (miles per gallon)</label>
+                    <input placeholder="Example: 55.4" type="text" class="form-control" name="mpg" required="required">
+                </div>
+                <div class="form-group">
+                    <label for="">Engine Size (size in litres)</label>
+                    <input placeholder="Example: 1.4" type="text" class="form-control" name="engineSize" required="required">
+                </div>
+                <button class="btn-submit">Predict</button>
+                <div class="seperate"></div>
+
+            </form>
+            <h2 class="result">{{prediction_text}}</h2>
+        </div>
+
+
+
+    </div>
+
+    <script>
+        let cars = ['../static/img/car1.jpg', '../static/img/car2.jpg', '../static/img/car3.jpg', '../static/img/car4.jpg', '../static/img/car5.jpg']
+        let imageCar = document.querySelector('.background')
+        setInterval(() => {
+            let index = Math.floor(Math.random() * cars.length)
+            imageCar.style.backgroundImage = `url('${cars[index]}')`
+        }, 4000)
+
+
+        let result = document.querySelector('.result')
+        if (result.innerText == 'merc'){
+            result.innerText = 'Mercedes'
+        }
+
+    </script>
+
+
+</body>
+
+</html>
